@@ -1,0 +1,102 @@
+body {
+	background-color: mintcream;
+	background-image: url("succulents.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+h1 {
+	text-align: center;
+	font-family: 'Cherry Swash', cursive;
+	color: antiquewhite;
+	text-shadow: 2px 2px 1px #23352f;
+	font-size: 6em;
+	margin: 0;
+	padding: 30px;
+}
+
+lable {
+	font-family: 'Source Sans Pro', sans-serif;
+	color: antiquewhite;
+	font-size: 1.5em;
+}
+
+form {
+	width: 70%;
+	display: block;
+	margin: auto;
+	padding: 5px;
+}
+
+div {
+	width: 30%;
+	margin: auto;
+	padding: 20px;
+}
+
+#form button {
+	width: 100px;
+	padding: 2px 5px;
+	margin: 5px;
+}
+
+#container {
+	padding: 5px;
+	width: 70%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 200px;
+	border-radius: 0px 0px 5px 5px;
+	background-color: rgba(255, 255, 255, .8);
+}
+
+#form {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 5px;
+	width: 70%;
+	border-radius: 5px 5px 0px 0px;
+	background-color: #4d5b69;
+}
+
+li {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+	padding: 0 60px 0 0;
+	color: white;
+	font-family: 'Source Sans Pro', sans-serif;
+	color: #50815c;
+	font-size: 25px;
+}
+
+.delete {
+	position: absolute;
+	right: 45px;
+}
+
+.done {
+	position: absolute;
+	right: 100px;
+}
+
+.cross_out {
+	text-decoration: line-through;
+}
+
+button {
+	font-size: 18px;
+	padding: 1px 3px 0px 3px;
+	color: white;
+	background-color: #50815c;
+	border: 1px solid #50815c;
+	border-radius: 3px;
+}
+
+button:hover {
+	background-color: #8cac88;
+	border: 1px solid #8cac88;
+	transition: all .25s;
+}
