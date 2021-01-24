@@ -28,18 +28,6 @@ form {
 	padding: 5px;
 }
 
-div {
-	width: 30%;
-	margin: auto;
-	padding: 20px;
-}
-
-#form button {
-	width: 100px;
-	padding: 2px 5px;
-	margin: 5px;
-}
-
 #container {
 	padding: 5px;
 	width: 70%;
@@ -65,21 +53,35 @@ li {
 	justify-content: space-between;
 	align-items: center;
 	position: relative;
-	padding: 0 60px 0 0;
+	padding: 2px 60px 2px 0;
 	color: white;
 	font-family: 'Source Sans Pro', sans-serif;
 	color: #50815c;
 	font-size: 25px;
 }
 
-.delete {
+.fas.fa-trash-alt {
 	position: absolute;
 	right: 45px;
 }
 
-.done {
+.fas.fa-check-square {
 	position: absolute;
 	right: 100px;
+}
+
+i {
+	color: white;
+	background-color: #50815c;
+	border: 4px solid #50815c;
+	border-radius: 3px;
+	margin: 10px;
+}
+
+i:hover {
+	cursor: pointer;
+	background-color: #8cac88;
+	border: 4px solid #8cac88;
 }
 
 .cross_out {
@@ -87,8 +89,10 @@ li {
 }
 
 button {
+	width: 100px;
+	padding: 2px 5px;
+	margin: 5px;
 	font-size: 18px;
-	padding: 1px 3px 0px 3px;
 	color: white;
 	background-color: #50815c;
 	border: 1px solid #50815c;
@@ -96,6 +100,7 @@ button {
 }
 
 button:hover {
+	cursor: pointer;
 	background-color: #8cac88;
 	border: 1px solid #8cac88;
 	transition: all .25s;
