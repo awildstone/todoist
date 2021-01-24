@@ -8,44 +8,34 @@ document.addEventListener('DOMContentLoaded', function() {
 
 const addTodo = document.querySelector('form');
 const toDoList = document.querySelector('.todo_list');
-const newToDoItems = [];
-
 
 addTodo.addEventListener('submit', function(e) {
     //prevent the default form submission
-   e.preventDefault();
+    e.preventDefault();
     //create the new html elements
-   const todoInput = document.querySelector('#new_todo');
-   const newLi = document.createElement('li');
-   const newButtonCheck = document.createElement('button');
-   const newButtonDelete = document.createElement('button');
-   
-    //add values to the elements
-   newLi.innerText = todoInput.value + " ";
-   newButtonCheck.classList.add('done');
-   newButtonDelete.classList.add('delete');
-   newButtonCheck.innerHTML = '<i class="fas fa-check-square"></i>';
-   newButtonDelete.innerHTML = '<i class="fas fa-trash-alt"></i>';
-   newLi.append(newButtonCheck);
-   newLi.append(newButtonDelete);
-   toDoList.append(newLi);
+    const todoInput = document.querySelector('#new_todo');
+    const newLi = document.createElement('li');
+    //add the check and trash icons
+    newLi.innerHTML = '<i class="fas fa-check-square"></i><i class="fas fa-trash-alt"></i>';
+    //add the todo value
+    newLi.prepend(todoInput.value + " ");
+    //add the new todo item
+    toDoList.append(newLi);
     //add the new todo to localStorage
-   localStorage.setItem('toDoList', JSON.stringify(toDoList.innerHTML));
-   //add each new element to a temp Array
-   const item = {lable:todoInput.value, content:newLi};
-   newToDoItems.push(item);
-   //reset the form values
-   addTodo.reset();
+    localStorage.setItem('toDoList', JSON.stringify(toDoList.innerHTML));
+    //reset the form values
+    addTodo.reset();
 });
 
 toDoList.addEventListener('click', function(e){
-    //If the delete button is checked removed the element.
-    if (e.target.parentElement.classList.contains('delete')) {
-        e.target.parentElement.parentElement.remove();
+    const target = e.target;
+    if (target.classList.contains('fa-trash-alt')) {
+        //If the trash icon is clicked removed the list item.
+        target.parentElement.remove();
         updateLocalStorage();
-    } else if (e.target.parentElement.classList.contains('done')) {
-        //If the check button is clicked strikethrough
-        e.target.parentElement.parentElement.classList.toggle('cross_out');
+    } else if (target.classList.contains('fa-check-square')) {
+        //If the check icon is clicked, strike through the list item.
+        target.parentElement.classList.toggle('cross_out');
         updateLocalStorage();
     }
 });
